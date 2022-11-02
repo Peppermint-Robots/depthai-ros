@@ -101,7 +101,8 @@ def generate_launch_description():
                     'cam_roll:=', cam_roll, ' ',
                     'cam_pitch:=', cam_pitch, ' ',
                     'cam_yaw:=', cam_yaw
-                ])}]
+                ])}],
+                remappings=[("/tf", "tf"), ("/tf_static", "tf_static")]
         )
     
     ld = LaunchDescription()

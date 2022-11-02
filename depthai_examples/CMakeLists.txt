@@ -90,18 +90,18 @@ if ( ament_cmake_FOUND )
   #   ${ament_INCLUDE_DIRS}
   # )
 
-  dai_add_node_ros2(crop_control_service ros2_src/crop_control_service.cpp)
-  dai_add_node_ros2(mobilenet_node ros2_src/mobilenet_publisher.cpp)
-  dai_add_node_ros2(rgb_node ros2_src/rgb_publisher.cpp)
-  dai_add_node_ros2(rgb_stereo_node ros2_src/rgb_stereo_node.cpp)
+  #dai_add_node_ros2(crop_control_service ros2_src/crop_control_service.cpp)
+  #dai_add_node_ros2(mobilenet_node ros2_src/mobilenet_publisher.cpp)
+  #dai_add_node_ros2(rgb_node ros2_src/rgb_publisher.cpp)
+  #dai_add_node_ros2(rgb_stereo_node ros2_src/rgb_stereo_node.cpp)
   # dai_add_node_ros2(rgb_subscriber_node ros2_src/rgb_video_subscriber.cpp)
-  dai_add_node_ros2(stereo_inertial_node ros2_src/stereo_inertial_publisher.cpp)
-  dai_add_node_ros2(stereo_node ros2_src/stereo_publisher.cpp)
-  dai_add_node_ros2(yolov4_spatial_node ros2_src/yolov4_spatial_publisher.cpp)
+  #dai_add_node_ros2(stereo_inertial_node ros2_src/stereo_inertial_publisher.cpp)
+  #dai_add_node_ros2(stereo_node ros2_src/stereo_publisher.cpp)
+  #dai_add_node_ros2(yolov4_spatial_node ros2_src/yolov4_spatial_publisher.cpp)
     
-  target_compile_definitions(mobilenet_node PRIVATE BLOB_NAME="${mobilenet_blob_name}")
-  target_compile_definitions(yolov4_spatial_node PRIVATE BLOB_NAME="${tiny_yolo_v4_blob_name}")
-  target_compile_definitions(stereo_inertial_node PRIVATE BLOB_NAME="${tiny_yolo_v4_blob_name}")
+  #target_compile_definitions(mobilenet_node PRIVATE BLOB_NAME="${mobilenet_blob_name}")
+  #target_compile_definitions(yolov4_spatial_node PRIVATE BLOB_NAME="${tiny_yolo_v4_blob_name}")
+  #target_compile_definitions(stereo_inertial_node PRIVATE BLOB_NAME="${tiny_yolo_v4_blob_name}")
   
   if($ENV{ROS_DISTRO} STREQUAL "galactic")
     target_compile_definitions(rgb_stereo_node PRIVATE IS_GALACTIC)
@@ -119,13 +119,13 @@ if ( ament_cmake_FOUND )
   FILES_MATCHING PATTERN "*.py")
 
   install(TARGETS
-          crop_control_service
-          mobilenet_node
-          rgb_node
-          rgb_stereo_node
-          stereo_inertial_node
-          stereo_node
-          yolov4_spatial_node
+	  #crop_control_service
+	  #mobilenet_node
+	  #rgb_node
+	  #rgb_stereo_node
+	  #stereo_inertial_node
+	  #stereo_node
+	  #yolov4_spatial_node
           DESTINATION lib/${PROJECT_NAME})
           
   ament_package()
