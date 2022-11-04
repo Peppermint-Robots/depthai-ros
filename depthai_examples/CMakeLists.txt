@@ -191,16 +191,16 @@ elseif( CATKIN_DEVEL_PREFIX OR CATKIN_BUILD_BINARY_PACKAGE )
     opencv_highgui
   )
 
-  dai_add_node(crop_control_service ros1_src/crop_control_service.cpp)
-  dai_add_node(mobilenet_node ros1_src/mobilenet_publisher.cpp)
-  dai_add_node(rgb_node ros1_src/rgb_publisher.cpp)
-  dai_add_node(rgb_stereo_node ros1_src/rgb_stereo_node.cpp)
-  dai_add_node(rgb_subscriber_node ros1_src/rgb_video_subscriber.cpp)
+  #dai_add_node(crop_control_service ros1_src/crop_control_service.cpp)
+  #dai_add_node(mobilenet_node ros1_src/mobilenet_publisher.cpp)
+  #dai_add_node(rgb_node ros1_src/rgb_publisher.cpp)
+  #dai_add_node(rgb_stereo_node ros1_src/rgb_stereo_node.cpp)
+  #dai_add_node(rgb_subscriber_node ros1_src/rgb_video_subscriber.cpp)
   # dai_add_node(stereo_mimic_node ros1_src/stereo_mimic_node.cpp)
-  dai_add_node(stereo_inertial_node ros1_src/stereo_inertial_publisher.cpp)
+  #dai_add_node(stereo_inertial_node ros1_src/stereo_inertial_publisher.cpp)
 
-  dai_add_node(stereo_node ros1_src/stereo_publisher.cpp)
-  dai_add_node(yolov4_spatial_node ros1_src/yolov4_spatial_publisher.cpp)
+  #dai_add_node(stereo_node ros1_src/stereo_publisher.cpp)
+  #dai_add_node(yolov4_spatial_node ros1_src/yolov4_spatial_publisher.cpp)
 
   target_compile_definitions(mobilenet_node PRIVATE BLOB_NAME="${mobilenet_blob_name}")
   target_compile_definitions(yolov4_spatial_node PRIVATE BLOB_NAME="${tiny_yolo_v4_blob_name}")
@@ -212,19 +212,19 @@ elseif( CATKIN_DEVEL_PREFIX OR CATKIN_BUILD_BINARY_PACKAGE )
 )
 
   ## Install these nodes
-  install(TARGETS
-          crop_control_service
-          mobilenet_node
-          nodelet_stereo
-          rgb_node
-          rgb_stereo_node
-          rgb_subscriber_node
-          stereo_inertial_node
-          stereo_node
-          yolov4_spatial_node
-          LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-          RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  )
+  #install(TARGETS
+  #       crop_control_service
+  #       mobilenet_node
+  #       nodelet_stereo
+  #        rgb_node
+  #        rgb_stereo_node
+  #        rgb_subscriber_node
+  #        stereo_inertial_node
+  #        stereo_node
+  #        yolov4_spatial_node
+  #        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  #          RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  #)
 
   install(DIRECTORY params DESTINATION share/${PROJECT_NAME})
   install(DIRECTORY rviz DESTINATION share/${PROJECT_NAME})
@@ -232,7 +232,7 @@ elseif( CATKIN_DEVEL_PREFIX OR CATKIN_BUILD_BINARY_PACKAGE )
   install(DIRECTORY launch/
 	DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 	PATTERN ".svn" EXCLUDE
-  )
+	)
   install(FILES nodelet_plugins.xml
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
