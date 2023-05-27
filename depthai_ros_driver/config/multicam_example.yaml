@@ -1,24 +1,27 @@
-/oak_d_lite:
+# front_camera:
+#   ros__parameters:
+#     camera:
+#       i_mx_id: 18443010C1038C1200
+#       i_pipeline_type: RGB
+#       i_floodlight_brightness: 200
+#       i_laser_dot_brightness: 200
+#     nn:
+#       i_nn_config_path: depthai_ros_driver/mobilenet
+left_camera:
   ros__parameters:
     camera:
       i_mx_id: 18443010C1038C1200
-      i_nn_type: rgb
-    left:
-      i_resolution: '480'
-    right:
-      i_resolution: '480'
+      i_pipeline_type: RGB
+      i_floodlight_brightness: 100
+      i_laser_dot_brightness: 200
     nn:
-      i_nn_config_path: depthai_ros_driver/yolo
-/oak_d_w:
+      i_nn_config_path: depthai_ros_driver/mobilenet
+right_camera:
   ros__parameters:
     camera:
-      i_mx_id: 19443010D1BFF51200
-      i_nn_type: rgb
-    nn:
-      i_nn_config_path: depthai_ros_driver/segmentation
-/oak_d_pro:
-  ros__parameters:
-    camera:
-      i_mx_id: 1944301051FB4D1300
+      i_mx_id: 18443010C1038C1200
+      i_pipeline_type: RGB
+      i_floodlight_brightness: 100
+      i_laser_dot_brightness: 200
     nn:
       i_nn_config_path: depthai_ros_driver/mobilenet
