@@ -166,7 +166,8 @@ void Camera::startDevice() {
                         }
                     } else {
                         RCLCPP_INFO(this->get_logger(), "Device info: MXID: %s, Name: %s", info.getMxId().c_str(), info.name.c_str());
-                        throw std::runtime_error("Unable to connect to the device, check if parameters match with given info.");
+                        RCLCPP_ERROR(this->get_logger(),"Unable to connect to the device, check if parameters match with given info.");
+                        //throw std::runtime_error("Unable to connect to the device, check if parameters match with given info.");
                     }
                 }
             }
