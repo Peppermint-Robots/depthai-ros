@@ -1,6 +1,6 @@
 multi_cam_params:
   ros__parameters:
-    camera_plugins:
+    activated_cameras:
       - front_camera
       - right_camera
       - left_camera
