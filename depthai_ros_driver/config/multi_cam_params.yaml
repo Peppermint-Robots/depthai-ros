@@ -544,7 +544,7 @@ multi_cam_params:
         i_laser_dot_brightness: 800
         i_mx_id: '0A'
         i_nn_type: none
-        i_pipeline_type: RGBD
+        i_pipeline_type: RGB
         i_usb_port_id: ''
         i_usb_speed: SUPER_PLUS
         i_pipeline_dump: false
@@ -625,7 +625,7 @@ multi_cam_params:
         i_low_bandwidth: false
         i_low_bandwidth_quality: 50
         i_max_q_size: 30
-        i_publish_topic: true
+        i_publish_topic: false
         i_simulate_from_topic: false
         i_disable_node: false
         i_resolution: '720'
