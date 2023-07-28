@@ -47,7 +47,8 @@ def launch_setup(context, *args, **kwargs):
                     'cam_roll:=', cam_roll, ' ',
                     'cam_pitch:=', cam_pitch, ' ',
                     'cam_yaw:=', cam_yaw
-                ])}]
+                ])}],
+            remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
         )
 
     return [rsp_node]
