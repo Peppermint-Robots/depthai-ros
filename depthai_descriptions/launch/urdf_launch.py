@@ -83,6 +83,7 @@ def launch_setup(context, *args, **kwargs):
             name=name + "_state_publisher",
             namespace=namespace,
             parameters=[robot_description],
+            remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
         ),
         LoadComposableNodes(
             target_container=f"{namespace.perform(context)}/{name}_container",
@@ -94,6 +95,7 @@ def launch_setup(context, *args, **kwargs):
                     name=name + "_state_publisher",
                     namespace=namespace,
                     parameters=[robot_description],
+                    remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
                 )
             ],
         ),
